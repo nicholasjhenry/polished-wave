@@ -8,3 +8,11 @@ Examples based on [Real-Time Phoenix - Build Highly Scalable Systems with Channe
 
     make app.setup
     make wscat.install
+
+## Guide
+
+    # try pinging
+
+     $ wscat -c 'ws://localhost:4000/socket/websocket?vsn=2.0.0'
+     > ["1","1","ping","phx_join",{}]
+     > ["1","2","ping","ping",{}]
