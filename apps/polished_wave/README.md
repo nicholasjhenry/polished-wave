@@ -1,3 +1,0 @@
-# PolishedWave
-
-**TODO: Add description**
