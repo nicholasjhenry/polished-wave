@@ -15,7 +15,12 @@ Examples based on [Real-Time Phoenix - Build Highly Scalable Systems with Channe
 
 ## Guide
 
-Exclude all comments, including trailing comments.
+NOTE: Exclude all comments, including trailing comments.
+
+The `Phoenix.Message` is structured:
+
+    [join ref, message ref, topic, event, payload]
+    ["1","1","ping","phx_join",{}]
 
     # try pinging
 
