@@ -5,6 +5,7 @@ defmodule PolishedWaveWeb.PingChannel do
     {:ok, socket}
   end
 
+  # event, payload, socket
   def handle_in("ping", _payload, socket) do
     {:reply, {:ok, %{ping: "pong"}}, socket}
   end

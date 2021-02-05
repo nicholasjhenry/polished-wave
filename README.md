@@ -6,8 +6,12 @@ Examples based on [Real-Time Phoenix - Build Highly Scalable Systems with Channe
 
 ## Setup
 
-    make app.setup
+    make phx.setup
     make wscat.install
+
+## Start server
+
+    iex -S mix phx.server
 
 ## Guide
 
@@ -24,3 +28,13 @@ Exclude all comments, including trailing comments.
     $ wscat -c 'ws://localhost:4000/socket/websocket?vsn=2.0.0'
     > ["1","1","wild:1:2","phx_join",{}] # ok
     > ["1","2","wild:1:3","phx_join",{}] # error
+
+    # try broadcast
+
+    $ wscat -c 'ws://localhost:4000/socket/websocket?vsn=2.0.0'
+    > ["1","1","ping","phx_join",{}]
+
+    # must be the same instance phx server instance
+    PolishedWaveWeb.Endpoint.broadcast("ping", "test", %{data: "test"})
+
+
