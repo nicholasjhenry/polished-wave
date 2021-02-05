@@ -11,9 +11,11 @@ endef
 
 export ANNOUNCE_BODY
 
-setup:
+app.setup:
 	mix deps.get
 	mix deps.compile
 	cd apps/polished_wave_web/assets && npm install && node node_modules/webpack/bin/webpack.js --mode development
 	@echo "$$ANNOUNCE_BODY"
 
+wscat.install:
+	npm install -g wscat
