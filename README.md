@@ -42,4 +42,7 @@ The `Phoenix.Message` is structured:
     # must be the same instance phx server instance
     PolishedWaveWeb.Endpoint.broadcast("ping", "test", %{data: "test"})
 
+    # open the browser and view the console
+    open http://localhost:4000
+
 
