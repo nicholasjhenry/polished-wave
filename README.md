@@ -11,8 +11,16 @@ Examples based on [Real-Time Phoenix - Build Highly Scalable Systems with Channe
 
 ## Guide
 
+Exclude all comments, including trailing comments.
+
     # try pinging
 
      $ wscat -c 'ws://localhost:4000/socket/websocket?vsn=2.0.0'
      > ["1","1","ping","phx_join",{}]
      > ["1","2","ping","ping",{}]
+
+    # try wildcard
+
+    $ wscat -c 'ws://localhost:4000/socket/websocket?vsn=2.0.0'
+    > ["1","1","wild:1:2","phx_join",{}] # ok
+    > ["1","2","wild:1:3","phx_join",{}] # error
